@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=none
+image: atlassian/default-image:5
+
+definitions:
+  services:
+    docker:
+      memory: 7168
+
+pipelines:
+  custom:
+    safedocs-ci:
+      - step:
+          name: Build, test and package SafeDocs
+          size: 2x
+          max-time: 180
+          services:
+            - docker
+
+          script:
+            - docker version
+            - docker compose version
+
+            - mkdir -p docker-output
+
+            - echo "=== Building Docker images ==="
+            - docker compose build
+
+            - echo "=== Backend tests ==="
+            - docker compose run --rm backend
+
+            - echo "=== Flutter analyze, tests and APK build ==="
+            - docker compose run --rm flutter-ci
+
+            - echo "=== Generated artifact ==="
+            - ls -lh docker-output
+
+          artifacts:
+            - docker-output/*.apk

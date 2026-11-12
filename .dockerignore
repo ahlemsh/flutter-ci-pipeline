@@ -1,0 +1,11 @@
+.git
+.dart_tool
+build
+.idea
+.vscode
+*.log
+docker-output
+backend/.venv
+backend/__pycache__
+backend/.env
+backend/secrets
