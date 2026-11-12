@@ -26,20 +26,20 @@ docker compose build
 ## Results
 
 ### Flutter
-- ✅ 28 tests passed
-- ✅ Static analysis executed (`flutter analyze`)
-- ✅ Debug APK built inside Docker and exported as artifact
+- 28 tests passed
+- Static analysis executed (`flutter analyze`)
+- Debug APK built inside Docker and exported as artifact
 
 ### Backend
-- ✅ Python compilation check (`compileall`)
-- ✅ 12 tests passed
+- Python compilation check (`compileall`)
+- 12 tests passed
   - 10 unit tests
   - 2 integration tests
 
 ### Docker
-- ✅ `safedocs-flutter-ci:3.47.2` image built
-- ✅ `safedocs-backend-ci:dev` image built
-- ✅ `docker compose` configuration validated
+- `safedocs-flutter-ci:3.47.2` image built
+- `safedocs-backend-ci:dev` image built
+- `docker compose` configuration validated
 
 ## Project Structure
 
